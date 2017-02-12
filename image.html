@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Image fallover
+		</title>
+	</head>
+
+	<body>
+		<a href='#' onclick="hide('badi1', 'choti1', 'choti2', 'choti3')">
+			<img src="a.jpg" id="badi1" width='0px' height='0px' style="display: block; margin-left: auto; margin-right: auto" />
+		</a>
+		
+		<a href='#' onclick="enlarge('badi1', 'choti1', 'choti2', 'choti3')">
+			<img src="a.jpg" id="choti1" size='25%' width='35%' border='5px' style='display: block; margin-left: auto; margin-right: auto' />
+		</a>
+
+		<br><br>
+
+		<a href='#' onclick="hide('badi2', 'choti2', 'choti1', 'choti3')">
+			<img src="b.jpg" id="badi2" width='0px' height='0px' style="display: block; margin-left: auto; margin-right: auto" />
+		</a>
+		
+		<a href='#' onclick="enlarge('badi2', 'choti2', 'choti1', 'choti3')">
+			<img src="b.jpg" id="choti2" size='25%' width='35%' border='5px' style='display: block; margin-left: auto; margin-right: auto' />
+		</a>
+
+		<br><br>
+
+		<a href='#' onclick="hide('badi3', 'choti3', 'choti2', 'choti1')">
+			<img src="c.jpg" id="badi3" width='0px' height='0px' style="display: block; margin-left: auto; margin-right: auto" />
+		</a>
+		
+		<a href='#' onclick="enlarge('badi3', 'choti3', 'choti2', 'choti1')">
+			<img src="c.jpg" id="choti3" size='25%' width='35%' border='5px' style='display: block; margin-left: auto; margin-right: auto' />
+		</a>
+
+		<script type="text/javascript">
+			function enlarge(big, small, hide1, hide2) {
+				var i = document.getElementById(big);
+				i.style.width='50%';
+				i.style.height='50%';
+
+				var j = document.getElementById(small);
+				j.style.width='0';
+				j.style.height='0';
+				j.border='0';
+
+				var q = document.getElementById(hide1);
+				q.style.width='0';
+				q.style.height='0';
+				q.border='0';
+
+				var w = document.getElementById(hide2);
+				w.style.width='0';
+				w.style.height='0';
+				w.border='0';
+
+				document.body.style.backgroundColor='#2a2a24';
+			}
+			function hide(big, small, show1, show2) {
+				var i = document.getElementById(big);
+				i.style.width='0';
+				i.style.height='0';
+
+				var j = document.getElementById(small);
+				j.style.width='35%';
+				j.style.height='25%';
+				j.border='5px';
+
+				var q = document.getElementById(show1);
+				q.style.width='35%';
+				q.style.height='25%';
+				q.border='5px';
+
+				var w = document.getElementById(show2);
+				w.style.width='35%';
+				w.style.height='25%';
+				w.border='5px';
+
+				document.body.style.backgroundColor='white';
+			}
+		</script>
+	</body>
+</html>
